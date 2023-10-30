@@ -56,6 +56,23 @@
         console.log(diaSemanaTexto + ", " + dia + " de " + mesTexto + " de " + ano);
 
         console.log(`${diaSemanaTexto}, ${dia} de ${mesTexto} de ${ano} - ${hora}:${min}:${seg}`);
+
+        //comparando datas
+        var dataX = new Date("10/05/2022");
+        var dataY = new Date("11/05/2022");
+
+        //if (datax == dataY) { //não funciona pq para comparar se datas são iguais, dois objetos não são iguais}
+
+        if(dataX.getTime() == dataY.getTime()){
+            console.log("Datas iguais");
+        }else{
+            console.log("Datas diferentes");
+        }
+
+        //para comparar com <,> <= ou >= é normal
+        if(dataX > dataY){
+            console.log("A data inicial deve ser menor que a data final");
+        }
     </script>
 </head>
 
