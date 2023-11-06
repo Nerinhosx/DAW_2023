@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exemplo JSON</title>
+
+    <script type="text/javascript">
+        var alunoObj = {
+            ra: 12345,
+            nome: 'Simone'
+        };
+
+        //Convertendo o obj JS para um JSON (formato texto)
+        var alunoStr = JSON.stringify(alunoObj);
+        console.log("Obj em JSON: " + alunoStr);
+
+        //Convertendo o JSON (formato texto) para um obj JS
+        var novoAlunoObj = JSON.parse(alunoStr);
+        console.log("JSON em JS: " + novoAlunoObj.ra + " - " + novoAlunoObj.nome);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
