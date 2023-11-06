@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+
+</head>
+
+<body>
+    <form>
+        Sigla:<br>
+        <input type="text" id="sigla">
+
+        <br><br>
+        Nome:<br>
+        <input type="text" id="nome">
+
+        <br><br>
+        <input type="button" value="Cadastrar" id="cadastrar">
+    </form>
+    <hr>
+    <h2>Cursos Cadastrados</h2>
+    <table border="1" id="tabelaCursos" width="30%">
+        <tr>
+            <th>Sigla</th>
+            <th>Nome</th>
+        </tr>
+
+    <script type="text/javascript">
+
+        var cad = document.getElementById("cadastrar");
+        cad.addEventListener("click", cadastrarCurso);
+
+        function cadastrarCurso() {
+            //criando um objeto com duas propriedades
+            /*var curso = {
+                sigla: document.getElementById("sigla").value,
+                nome: document.getElementById("nome").value
+            };*/
+
+            var curso = {
+                sigla: document.querySelector("#sigla").value,
+                nome: document.querySelector("#nome").value
+            };
+
+            var tabela = document.getElementById("tabelaCursos");
+            tabela.innerHTML = tabela.innerHTML + "<tr>";
+
+            /*Forma padrão de concatenar
+            tabela.innerHTML = tabela.innerHTML + "<td align='center'>" + curso.sigla + "</td>" + "<td align='center'>" + curso.nome + "</td>";
+            */
+
+            //Usando template strings
+            tabela.innerHTML = tabela.innerHTML +
+                `<td align='center'>${curso.sigla}</td>
+            <td align='center'>${curso.nome}</td>`;
+
+            tabela.innerHTML = tabela.innerHTML + "</tr>";
+
+            document.getElementById("sigla").value = "";
+            document.getElementById("nome").value = "";
+        }
+    </script>
+</body>
+
+</html>
