@@ -11,9 +11,14 @@
 
         function cadastrarCurso() {
             //criando um objeto com duas propriedades
-            var curso = {
+            /*var curso = {
                 sigla: document.getElementById("sigla").value,
                 nome: document.getElementById("nome").value
+            };*/
+
+            var curso = {
+                sigla: document.querySelector("#sigla").value,
+                nome: document.querySelector("#nome").value
             };
 
             var tabela = document.getElementById("tabelaCursos");
@@ -22,7 +27,7 @@
             /*Forma padrão de concatenar
             tabela.innerHTML = tabela.innerHTML + "<td align='center'>" + curso.sigla + "</td>" + "<td align='center'>" + curso.nome + "</td>";
             */
-           
+
             //Usando template strings
             tabela.innerHTML = tabela.innerHTML +
             `<td align='center'>${curso.sigla}</td>
@@ -31,7 +36,7 @@
             tabela.innerHTML = tabela.innerHTML + "</tr>";
 
             document.getElementById("sigla").value = "";
-            document.getElementById("nome").value = "";
+            document.getElementById("nome").value = ""; 
         }
     </script>
 </head>
