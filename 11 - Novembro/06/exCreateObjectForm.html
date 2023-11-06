@@ -18,7 +18,16 @@
 
             var tabela = document.getElementById("tabelaCursos");
             tabela.innerHTML = tabela.innerHTML + "<tr>";
+
+            /*Forma padrão de concatenar
             tabela.innerHTML = tabela.innerHTML + "<td align='center'>" + curso.sigla + "</td>" + "<td align='center'>" + curso.nome + "</td>";
+            */
+           
+            //Usando template strings
+            tabela.innerHTML = tabela.innerHTML +
+            `<td align='center'>${curso.sigla}</td>
+            <td align='center'>${curso.nome}</td>`;
+
             tabela.innerHTML = tabela.innerHTML + "</tr>";
 
             document.getElementById("sigla").value = "";
